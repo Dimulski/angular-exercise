@@ -17,17 +17,17 @@ export class CustomerDetailsComponent implements OnInit {
   ];
   @Input() suggestions: any[] = [
     {
-      image: "../../../assets/images/era.jpg",
+      image: "https://blog.flolive.net/hubfs/Welcome%20to%20the%20era.jpg",
       title: "Welcome to the era of software-defined IoT connectivity",
       link: "https://blog.flolive.net/welcome-to-the-era-of-software-defined-iot-connectivity"
     },
     {
-      image: "../../../assets/images/bss.jpg",
+      image: "https://blog.flolive.net/hubfs/Stop%20talking%20BSS.jpg",
       title: "Stop talking BSS with limited legacy technology, and make it happen with cloud BSS built for IoT",
       link: "https://blog.flolive.net/stop-talking-bss-with-limited-legacy-technology-and-make-it-happen-with-cloud-bss-built-for-iot"
     },
     {
-      image: "../../../assets/images/market.jpg",
+      image: "https://blog.flolive.net/hubfs/Market%20trends%20for.jpg",
       title: "Why Do Enterprises Need a Private Core Network?",
       link: "https://blog.flolive.net/market-trends-for-mobile-private-networks-why-do-enterprises-need-a-private-core-network"
     }

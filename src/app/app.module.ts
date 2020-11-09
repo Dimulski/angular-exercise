@@ -9,6 +9,7 @@ import { BaseContentHeaderDirective } from './directives/base-content-header.dir
 import { BaseContentBodyLeftDirective } from './directives/base-content-body-left.directive';
 import { BaseContentBodyRightDirective } from './directives/base-content-body-right.directive';
 import { BaseContentFooterDirective } from './directives/base-content-footer.directive';
+import { AccountDetailsComponent } from './components/account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BaseContentFooterDirective } from './directives/base-content-footer.dir
     BaseContentHeaderDirective,
     BaseContentBodyLeftDirective,
     BaseContentBodyRightDirective,
-    BaseContentFooterDirective
+    BaseContentFooterDirective,
+    AccountDetailsComponent
   ],
   imports: [
     BrowserModule,

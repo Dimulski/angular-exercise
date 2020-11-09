@@ -1,11 +1,19 @@
 <div>
-  <h1 class="text-center my-5">Angular exercise</h1>
-
+  <header>
+    <h1 class="text-center py-4">Angular exercise</h1>
+  </header>
+  
   <div class="container mb-5">
-    <button class="mr-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none" routerLink="/customer-details">Customer details</button>
-    <button class="mx-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none">Account details</button>
-    <button class="ml-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none">Dynamic form</button>
+    <button class="mr-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none" routerLink="/customer-details" routerLinkActive="active-link">Customer details</button>
+    <button class="mx-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none" routerLink="/account-details" routerLinkActive="active-link">Account details</button>
+    <button class="ml-3 py-2 px-3 rounded-lg border-0 bg-white shadow-sm outline-none" routerLinkActive="active-link" disabled>Dynamic form</button>
   </div>
 
   <router-outlet></router-outlet>
+
+  <footer class="d-flex pt-5 pb-3 justify-content-center">
+    <a class="font-weight-bold" href="https://github.com/Dimulski/angular-exercise" target="blank">
+      Show me the code
+    </a>
+  </footer>
 </div>
