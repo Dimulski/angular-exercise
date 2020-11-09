@@ -1,0 +1,15 @@
+.suggestion {
+  max-height: 100px;
+  border-radius: 10px;
+  & img {
+    height: 100px;
+  }
+
+  & .suggestion-title a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

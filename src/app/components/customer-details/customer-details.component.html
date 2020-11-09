@@ -1,0 +1,49 @@
+<app-base-content-layout>
+  <ng-template appBaseContentHeader>
+    <div class="d-flex flex-wrap w-100">
+      <h4 class="w-100 text-primary pb-2">Personal details</h4>
+      <div class="form-group col-6">
+        <label for="firstName" class="w-100">First name</label>
+        <input type="text" id="firstName" class="form-control" [value]="firstName" disabled>
+      </div>
+      <div class="form-group col-6">
+        <label for="lastName" class="w-100">Last name</label>
+        <input type="text" id="lastName" class="form-control" [value]="lastName" disabled>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template appBaseContentBodyLeft>
+    <div class="d-flex flex-wrap">
+      <h4 class="w-100 text-primary pb-2">Todos</h4>
+      <ol>
+        <li *ngFor="let item of todos">{{ item }}</li>
+      </ol>
+    </div>
+  </ng-template>
+  <ng-template appBaseContentBodyRight>
+		<div class="d-flex flex-wrap">
+      <h4 class="w-100 text-primary pb-2">Suggestions</h4>
+        <div class="suggestions-container px-3">
+          <div class="suggestion mb-4 d-flex overflow-hidden shadow-sm border-0" *ngFor="let suggestion of suggestions">
+            <img [src]="suggestion.image">
+            <h5 class="suggestion-title p-3">
+              <a [href]="suggestion.link">{{ suggestion.title }}</a>
+            </h5>
+          </div>
+        </div>
+    </div>
+  </ng-template>
+  <ng-template appBaseContentFooter>
+		<div class="d-flex flex-wrap w-100">
+      <h4 class="w-100 text-primary pb-2">Contact details</h4>
+      <div class="form-group col-6">
+        <label for="phone" class="w-100">Phone number</label>
+        <input type="text" id="phone" class="form-control" [value]="phone" disabled>
+      </div>
+      <div class="form-group col-6">
+        <label for="email" class="w-100">Email</label>
+        <input type="email" id="email" class="form-control" [value]="email" disabled>
+      </div>
+    </div>
+  </ng-template>
+</app-base-content-layout>
