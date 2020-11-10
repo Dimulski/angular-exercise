@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { BaseContentBodyLeftDirective } from './directives/base-content-body-lef
 import { BaseContentBodyRightDirective } from './directives/base-content-body-right.directive';
 import { BaseContentFooterDirective } from './directives/base-content-footer.directive';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { AccountDetailsComponent } from './components/account-details/account-de
     BaseContentBodyLeftDirective,
     BaseContentBodyRightDirective,
     BaseContentFooterDirective,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

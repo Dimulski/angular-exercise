@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'account-details',
     component: AccountDetailsComponent
+  },
+  {
+    path: 'dynamic-form',
+    component: DynamicFormComponent
   }
 ];
 
