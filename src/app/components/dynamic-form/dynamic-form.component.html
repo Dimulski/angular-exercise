@@ -1,5 +1,7 @@
 <div class="container">
-  <form class="" [formGroup]="dynamicForm" #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
+  <div class="text-success pb-3" *ngIf="showSubmittedMessage">Form submitted!</div>
+  <form [formGroup]="dynamicForm" #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
+    <label class="w-100 text-primary">Sent status</label>
     <div class="form-group">
       <label *ngFor="let status of sentStatuses" class="pr-3">
         <input
@@ -10,19 +12,42 @@
         >{{ status }}
       </label>
     </div>
-    <div formGroupName="alreadySent" *ngIf="">
+
+    <div formGroupName="alreadySent" *ngIf="dynamicForm.get('sentStatus').value == 'Already sent'" class="px-3">
       <div class="form-group">
-        <input type="file" id="myFile" name="filename">
+        <label for="document" class="w-100">Document</label>
+        <input type="file" id="document" formControlName="document">
+        <div *ngIf="(!dynamicForm.get('alreadySent.document').valid && ngForm.submitted) || (!dynamicForm.get('alreadySent.document').valid && dynamicForm.get('alreadySent.document').touched)" class="text-danger pt-2">
+          Please choose a document.
+        </div>
       </div>
       <div class="form-group">
-        <input type="date" id="birthday" name="birthday">
+        <label for="sendDate" class="w-100">Send date</label>
+        <input type="date" id="sendDate" formControlName="sendDate">
+        <div *ngIf="(!dynamicForm.get('alreadySent.sendDate').valid && ngForm.submitted) || (!dynamicForm.get('alreadySent.sendDate').valid && dynamicForm.get('alreadySent.sendDate').touched)" class="text-danger pt-2">
+          Please choose a send date.
+        </div>
       </div>
       <div class="form-group col-6 px-0">
         <label for="message" class="w-100">Comment (optional)</label>
-        <textarea class="form-control" id="message" rows="4"></textarea>
+        <textarea class="form-control" id="message" rows="4" formControlName="comment"></textarea>
       </div>
     </div>
 
+    <div formGroupName="notSentYet" *ngIf="dynamicForm.get('sentStatus').value == 'Not sent yet'" class="px-3">
+      <div class="form-group">
+        <label for="passportNumber" class="w-100">Passport number</label>
+        <input type="text" list="passportNumberSuggestions" formControlName="passportNumber">
+        <datalist id="passportNumberSuggestions">
+          <option *ngFor="let suggestion of passportNumberSuggestions" [value]="suggestion.name" >{{ suggestion.name }}</option>
+        </datalist>
+        <div *ngIf="(!dynamicForm.get('notSentYet.passportNumber').valid && ngForm.submitted) || (!dynamicForm.get('notSentYet.passportNumber').valid && dynamicForm.get('notSentYet.passportNumber').touched)" class="text-danger pt-2">
+          Please fill out a passport number.
+        </div>
+      </div>
+    </div>
+
+    <label class="w-100 text-primary">Urgency</label>
     <div class="form-group">
       <label *ngFor="let state of urgencyState" class="pr-3">
         <input
@@ -36,16 +61,15 @@
         Please pick an urgency state.
       </div>
     </div>
-
-    <div class="form-group" *ngIf="!!dynamicForm.get('deadline')">
-      <input formControlName="deadline" type="date" id="deadline" name="deadline">
-      <div *ngIf="(!dynamicForm.get('deadline').valid && ngForm.submitted) || (!dynamicForm.get('deadline').valid && dynamicForm.get('deadline').touched)" class="text-danger">
-        Please select a deadline.
+    
+    <div class="form-group px-3" *ngIf="!!dynamicForm.get('deadline')">
+      <label for="deadline" class="w-100">Deadline</label>
+      <input type="date" id="deadline" formControlName="deadline">
+      <div *ngIf="(!dynamicForm.get('deadline').valid && ngForm.submitted) || (!dynamicForm.get('deadline').valid && dynamicForm.get('deadline').touched)" class="text-danger pt-2">
+        Please choose a deadline.
       </div>
     </div>
-
-    <button class="btn btn-primary" type="submit">Submit</button>
-    <!-- <button class="btn btn-secondary" type="button" (click)="print()">print</button> -->
-
+    
+    <button class="btn btn-primary bg-primary border-white mt-3" type="submit">Submit</button>
   </form>
 </div>

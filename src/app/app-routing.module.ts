@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { ReusableButtonComponent } from './components/reusable-button/reusable-button.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'dynamic-form',
     component: DynamicFormComponent
+  },
+  {
+    path: 'reusable-button',
+    component: ReusableButtonComponent
   }
 ];
 

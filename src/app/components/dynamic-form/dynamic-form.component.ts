@@ -11,6 +11,13 @@ export class DynamicFormComponent implements OnInit {
   public dynamicForm: FormGroup;
   public sentStatuses = ['Already sent', 'Not sent yet'];
   public urgencyState = ['Urgent', 'Not urgent'];
+  public passportNumberValue: string;
+  public showSubmittedMessage: boolean = false;
+
+  passportNumberSuggestions = [
+    { id: 1, name: '321456' },
+    { id: 2, name: '321897' }
+  ];
 
   constructor() { }
 
@@ -45,11 +52,18 @@ export class DynamicFormComponent implements OnInit {
     });
   }
 
-  public onSubmit(form: NgForm): void {
-    console.log(form)
-  }
-
-  print() {
-    console.log(this.dynamicForm)
+  public onSubmit(ngForm: NgForm): void {
+    if (this.dynamicForm.valid) {
+      console.log('Form submitted: ', this.dynamicForm.value);
+      this.showSubmittedMessage = true;
+      setTimeout(() => {
+        this.showSubmittedMessage = false;
+      }, 3000);
+      this.dynamicForm.removeControl('alreadySent');
+      this.dynamicForm.removeControl('notSentYet');
+      this.dynamicForm.removeControl('deadline');
+      this.dynamicForm.reset();
+      ngForm.resetForm();
+    }
   }
 }

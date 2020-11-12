@@ -1,0 +1,46 @@
+button {
+  color: white;
+  border: none;
+  background-color: #FDA80C;
+  line-height: 0;
+	transition: all .3s;
+  position: relative;
+  &[disabled] {
+    background-color: silver;
+    opacity: .65;
+  }
+	&:not([disabled]):before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+    height: 100%;
+    opacity: 0.8;
+		background-color: #fff;
+		transition: all .3s;
+	}
+	&:not([disabled]):hover {
+		&:before {
+      width: 100%;
+      opacity: 0;
+		}
+	}
+}
+
+button.button-small {
+  font-size: 80%;
+  border-radius: 5px;
+  width: 80px;
+  width: 5rem;
+  height: 20px;
+}
+button.button-medium {
+  width: 100px;
+  height: 30px;
+}
+button.button-large {
+  font-size: 120%;
+  width: 160px;
+  height: 40px;
+}

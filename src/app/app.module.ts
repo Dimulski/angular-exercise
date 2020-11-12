@@ -12,6 +12,8 @@ import { BaseContentBodyRightDirective } from './directives/base-content-body-ri
 import { BaseContentFooterDirective } from './directives/base-content-footer.directive';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ReusableButtonComponent } from './components/reusable-button/reusable-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
     BaseContentBodyRightDirective,
     BaseContentFooterDirective,
     AccountDetailsComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    ButtonComponent,
+    ReusableButtonComponent
   ],
   imports: [
     BrowserModule,
