@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <form class="" [formGroup]="dynamicForm" #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)">
     <div class="form-group">
       <label *ngFor="let status of sentStatuses" class="pr-3">
         <input
@@ -9,11 +9,8 @@
           class="mr-2"
         >{{ status }}
       </label>
-      <div *ngIf="!dynamicForm.get('sentStatus').valid && dynamicForm.get('sentStatus').touched" class="text-danger">
-        Please pick a status
-      </div>
     </div>
-    <div formGroupName="alreadySent">
+    <div formGroupName="alreadySent" *ngIf="">
       <div class="form-group">
         <input type="file" id="myFile" name="filename">
       </div>
@@ -22,9 +19,33 @@
       </div>
       <div class="form-group col-6 px-0">
         <label for="message" class="w-100">Comment (optional)</label>
-        <textarea class="form-control" id="message" rows="3" [value]="problemMessage"></textarea>
+        <textarea class="form-control" id="message" rows="4"></textarea>
       </div>
     </div>
+
+    <div class="form-group">
+      <label *ngFor="let state of urgencyState" class="pr-3">
+        <input
+          type="radio"
+          formControlName="urgencyState"
+          [value]="state"
+          class="mr-2"
+        >{{ state }}
+      </label>
+      <div *ngIf="(!dynamicForm.get('urgencyState').valid && ngForm.submitted) || (!dynamicForm.get('urgencyState').valid && dynamicForm.get('urgencyState').touched)" class="text-danger">
+        Please pick an urgency state.
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="!!dynamicForm.get('deadline')">
+      <input formControlName="deadline" type="date" id="deadline" name="deadline">
+      <div *ngIf="(!dynamicForm.get('deadline').valid && ngForm.submitted) || (!dynamicForm.get('deadline').valid && dynamicForm.get('deadline').touched)" class="text-danger">
+        Please select a deadline.
+      </div>
+    </div>
+
     <button class="btn btn-primary" type="submit">Submit</button>
+    <!-- <button class="btn btn-secondary" type="button" (click)="print()">print</button> -->
+
   </form>
 </div>

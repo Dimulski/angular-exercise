@@ -29,53 +29,57 @@ a, a:hover {
 button.active-link {
   background: #e5e5e5 !important;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1 !important;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1 !important;
-        box-shadow: inset 0px 0px 5px #c1c1c1 !important;
-   outline: none;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1 !important;
+  box-shadow: inset 0px 0px 5px #c1c1c1 !important;
+  outline: none;
+}
+
+input.ng-invalid.ng-touched[type='date'] {
+  border: 2px solid var(--danger);
 }
 
 .toggle-switch {
-	display: inline-block;
-	background: #ccc;
-	border-radius: 16px;
-	width: 58px;
-	height: 32px;
-	position: relative;
-	vertical-align: middle;
-	transition: background 0.25s;
-	&:before,
-	&:after {
-		content: "";
-	}
-	&:before {
-		display: block;
-		background: linear-gradient(to bottom, #fff 0%,#eee 100%);
-		border-radius: 50%;
-		box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
-		width: 24px;
-		height: 24px;
-		position: absolute;
-		top: 4px;
-		left: 4px;
-		transition: left 0.25s;
-	}
-	.toggle:hover &:before {
-		background: linear-gradient(to bottom, #fff 0%,#fff 100%);
-		box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
-	}
-	.toggle-checkbox:checked + & {
-		background: $brand-color;
-		&:before {
-			left: 30px;
-		}
-	}
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  &:before,
+  &:after {
+    content: "";
+  }
+  &:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+  }
+  .toggle:hover &:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+  .toggle-checkbox:checked + & {
+    background: $brand-color;
+    &:before {
+      left: 30px;
+    }
+  }
 }
 .toggle-checkbox {
-	position: absolute;
-	visibility: hidden;
+  position: absolute;
+  visibility: hidden;
 }
 .toggle-label {
-	margin-left: 5px;
-	position: relative;
-	top: 2px;
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
 }
