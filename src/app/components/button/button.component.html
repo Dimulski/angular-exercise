@@ -1,1 +1,3 @@
-<button (click)="emitClicked($event)" [disabled]="disabled" [type]="type" [ngClass]="'button-' + size">{{ text }}</button>
+<button (click)="emitClicked($event)" [disabled]="disabled" [type]="type" [ngClass]="'button-' + size">
+  <ng-content></ng-content>
+</button>

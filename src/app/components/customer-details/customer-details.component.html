@@ -27,7 +27,7 @@
           <div class="suggestion mb-4 d-flex overflow-hidden shadow-sm border-0" *ngFor="let suggestion of suggestions">
             <img [src]="suggestion.image">
             <h5 class="suggestion-title p-3">
-              <a [href]="suggestion.link">{{ suggestion.title }}</a>
+              <a [href]="suggestion.link" target="blank">{{ suggestion.title }}</a>
             </h5>
           </div>
         </div>

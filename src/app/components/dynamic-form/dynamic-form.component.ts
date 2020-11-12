@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -9,6 +9,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 export class DynamicFormComponent implements OnInit {
 
   public dynamicForm: FormGroup;
+  public formSubmitted: boolean = false;
   public sentStatuses = ['Already sent', 'Not sent yet'];
   public urgencyState = ['Urgent', 'Not urgent'];
   public passportNumberValue: string;
@@ -52,7 +53,8 @@ export class DynamicFormComponent implements OnInit {
     });
   }
 
-  public onSubmit(ngForm: NgForm): void {
+  public onSubmit(): void {
+    this.formSubmitted = true;
     if (this.dynamicForm.valid) {
       console.log('Form submitted: ', this.dynamicForm.value);
       this.showSubmittedMessage = true;
@@ -63,7 +65,7 @@ export class DynamicFormComponent implements OnInit {
       this.dynamicForm.removeControl('notSentYet');
       this.dynamicForm.removeControl('deadline');
       this.dynamicForm.reset();
-      ngForm.resetForm();
+      this.formSubmitted = false;
     }
   }
 }

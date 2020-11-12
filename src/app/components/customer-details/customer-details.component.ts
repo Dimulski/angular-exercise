@@ -32,7 +32,7 @@ export class CustomerDetailsComponent implements OnInit {
       link: "https://blog.flolive.net/market-trends-for-mobile-private-networks-why-do-enterprises-need-a-private-core-network"
     }
   ];
-  @Input() phone: string = "+359 898 671 501"
+  @Input() phone: string = "+1-202-555-0184"
   @Input() email: string = "george.dimulski@gmail.com"
 
   constructor() { }

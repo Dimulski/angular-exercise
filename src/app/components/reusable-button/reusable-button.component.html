@@ -1,16 +1,16 @@
 <div class="container py-5 mb-5">
   <div class="row col-lg-6 mx-auto py-4">
     <div class="col d-flex justify-content-between align-items-center">
-      <app-button size="small" (clicked)="alert($event)" text="Alert"></app-button>
-      <app-button size="medium" (clicked)="printEvent($event)" text="Print event"></app-button>
-      <app-button size="large" (clicked)="printEvent($event)" text="Print event"></app-button>
+      <app-button size="small" (clicked)="alert($event)">Alert</app-button>
+      <app-button size="medium" (clicked)="printEvent($event)">Print event</app-button>
+      <app-button size="large" (clicked)="printEvent($event)">Print event</app-button>
     </div>
   </div>
   <div class="row col-lg-6 mx-auto py-4">
     <div class="col d-flex justify-content-between align-items-center">
-      <app-button [disabled]="true" size="small" (clicked)="alert($event)" text="Alert"></app-button>
-      <app-button [disabled]="true" size="medium" (clicked)="printEvent($event)" text="Print event"></app-button>
-      <app-button [disabled]="true" size="large" (clicked)="printEvent($event)" text="Print event"></app-button>
+      <app-button [disabled]="true" size="small" (clicked)="alert($event)">Alert</app-button>
+      <app-button [disabled]="true" size="medium" (clicked)="printEvent($event)">Print event</app-button>
+      <app-button [disabled]="true" size="large" (clicked)="printEvent($event)">Print event</app-button>
     </div>
   </div>
 </div>

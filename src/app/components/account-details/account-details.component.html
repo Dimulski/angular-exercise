@@ -38,15 +38,13 @@
   <ng-template appBaseContentBodyRight>
 		<div class="d-flex flex-wrap">
       <h4 class="w-100 text-primary pb-2">Notifications</h4>
-      <div class="px-3">
-        <div class="w-100 pb-2" *ngFor="let item of objectKeys(notifications)">
-          <label class="user-select-none">
-            <input class="toggle-checkbox" type="checkbox" [checked]="notifications[item]">
-            <div class="toggle-switch"></div>
+        <div class="w-75 pb-2" *ngFor="let item of objectKeys(notifications)">
+          <label class="user-select-none d-block" style="cursor: pointer;">
             <span class="toggle-label pl-1">{{ item }}</span>
+            <input class="toggle-checkbox float-right" type="checkbox" [checked]="notifications[item]">
+            <div class="toggle-switch float-right"></div>
           </label>
         </div>
-      </div>
     </div>
   </ng-template>
   <ng-template appBaseContentFooter>
